@@ -13,13 +13,13 @@ type Player struct {
 	Pos      Pos
 	Name     string
 	Id       string
-	cooldown int64
+	Cooldown int64
 	Money    uint
 }
 
 type GameState struct {
 	Players    map[string]Player
-	start      int64
+	Start      int64
 	Treasures  []Pos
 	GridHeight int
 	GridWidth  int
