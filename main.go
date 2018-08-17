@@ -28,6 +28,7 @@ var gameState = game.GameState{
 	},
 }
 
+// Message ...
 type Message struct {
 	Type string
 	Data interface{}
