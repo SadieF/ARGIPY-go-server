@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"./game"
+	"github.com/SadieF/ARGIPY-go-server/game"
 	"github.com/gorilla/websocket"
 )
 
