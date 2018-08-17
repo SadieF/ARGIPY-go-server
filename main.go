@@ -38,14 +38,14 @@ func main() {
 	http.HandleFunc("/echo", func(w http.ResponseWriter, r *http.Request) {
 		conn, _ := upgrader.Upgrade(w, r, nil)
 
-			err := conn.WriteJSON(Message{
-				Type: "fullupdate",
-				Data: gameState,
-			})
-			if err != nil {
-				return
-			}
-			time.Sleep(500 * time.Millisecond)
+		err := conn.WriteJSON(Message{
+			Type: "fullupdate",
+			Data: gameState,
+		})
+		if err != nil {
+			return
+		}
+		time.Sleep(500 * time.Millisecond)
 
 	})
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
