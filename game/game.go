@@ -1,27 +1,27 @@
 package game
 
 type Pos struct {
-	x int
-	y int
+	X int
+	Y int
 }
 
 type Size struct {
-	height int
-	width  int
+	Height int
+	Width  int
 }
 type Player struct {
-	pos      Pos
-	name     string
-	id       string
+	Pos      Pos
+	Name     string
+	Id       string
 	cooldown int64
-	money    uint
+	Money    uint
 }
 
 type GameState struct {
-	players    map[string]Player
+	Players    map[string]Player
 	start      int64
-	treasures  []Pos
-	gridHeight int
-	gridWidth  int
-	you        string
+	Treasures  []Pos
+	GridHeight int
+	GridWidth  int
+	You        string
 }
