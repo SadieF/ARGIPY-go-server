@@ -37,7 +37,7 @@ type Message struct {
 func main() {
 	http.HandleFunc("/echo", func(w http.ResponseWriter, r *http.Request) {
 		conn, _ := upgrader.Upgrade(w, r, nil)
-		for {
+
 			err := conn.WriteJSON(Message{
 				Type: "fullupdate",
 				Data: gameState,
@@ -46,7 +46,7 @@ func main() {
 				return
 			}
 			time.Sleep(500 * time.Millisecond)
-		}
+
 	})
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "websockets.html")
