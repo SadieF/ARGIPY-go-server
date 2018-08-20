@@ -1,5 +1,8 @@
 package game
 
+//This file is defining the structs we will use. Structs are similar to objects.
+//Capitalization of the struct name means it is public and can be used outside of it's particular package
+// The fields must be capitalized otherwise there will be errors.
 type Pos struct {
 	X int
 	Y int
