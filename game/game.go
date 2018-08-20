@@ -25,3 +25,16 @@ type GameState struct {
 	GridWidth  int
 	You        string
 }
+
+// newGameState is the constructor for the GameState struct
+func newGameState() gameState {
+	gs := GameState{
+		Players:
+		Start: 
+		Treasures:
+		GridHeight:
+		GridWidth:
+		You:
+	}
+	return gs
+}
