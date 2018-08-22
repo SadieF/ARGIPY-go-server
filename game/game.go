@@ -42,4 +42,16 @@ func newGameState() State {
 		You:        "String?",
 	}
 	return gs
+}}
+	return gs
 }
+
+func treasures() []Pos {
+	return []Pos{
+		{X: 5, Y: 5},
+		{X: 15, Y: 15},
+		{X: 20, Y: 20},
+		{X: 45, Y: 45},
+	}
+}
+
