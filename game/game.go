@@ -55,3 +55,13 @@ func treasures() []Pos {
 	}
 }
 
+func newPlayer() *Player {
+	player := &Player{
+		Pos:      Pos{X: rand.Intn(50), Y: rand.Intn(50)},
+		Name:     NameGenerator(),
+		ID:       "ID?",
+		Cooldown: rand.Intn(20),
+		Money:    0,
+	}
+	return player
+}
