@@ -1,5 +1,7 @@
 package game
 
+import "math/rand"
+
 // Pos determines the position on the grid using X & Y axis
 type Pos struct {
 	X int
@@ -41,8 +43,6 @@ func newGameState() State {
 		GridWidth:  50,
 		You:        "String?",
 	}
-	return gs
-}}
 	return gs
 }
 
