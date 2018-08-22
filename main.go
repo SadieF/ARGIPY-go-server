@@ -13,10 +13,10 @@ var upgrader = websocket.Upgrader{
 	WriteBufferSize: 1024,
 }
 
-var gameState = game.GameState{
+var gameState = game.State{
 	Players: map[string]game.Player{
 		"a1234z": game.Player{
-			Id:   "a1234z",
+			ID:   "a1234z",
 			Name: "jeremy",
 		},
 	},
