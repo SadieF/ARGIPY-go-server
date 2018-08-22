@@ -32,14 +32,14 @@ type State struct {
 }
 
 // newGameState is the constructor for the GameState struct
-func newGameState() gameState {
-	gs := GameState{
-		Players:
-		Start: 
-		Treasures:
-		GridHeight:
-		GridWidth:
-		You:
+func newGameState() State {
+	gs := State{
+		Players:    newPlayer(),
+		Start:      0,
+		Treasures:  treasures(),
+		GridHeight: 50,
+		GridWidth:  50,
+		You:        "String?",
 	}
 	return gs
 }
