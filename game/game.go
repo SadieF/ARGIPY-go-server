@@ -1,6 +1,10 @@
 package game
 
-import "math/rand"
+import (
+	"encoding/json"
+	"log"
+	"math/rand"
+)
 
 // Pos determines the position on the grid using X & Y axis
 type Pos struct {
@@ -25,15 +29,14 @@ type Player struct {
 
 //State is the struct which represents the game state
 type State struct {
-	Players    map[string]Player
-	Start      int64
-	Treasures  []Pos
-	GridHeight int
-	GridWidth  int
-	You        string
+	Players    Player `json:"players"`
+	Start      int64  `json:"start"`
+	Treasures  []Pos  `json:"treasures"`
+	GridHeight int    `json:"gridHeight"`
+	GridWidth  int    `json:"gridWidth"`
+	You        string `json:"you"`
 }
 
-// newGameState is the constructor for the GameState struct
 func newGameState() State {
 	gs := State{
 		Players:    newPlayer(),
@@ -55,7 +58,7 @@ func treasures() []Pos {
 	}
 }
 
-func newPlayer() *Player {
+func newPlayer() Player {
 	player := &Player{
 		Pos:      Pos{X: rand.Intn(50), Y: rand.Intn(50)},
 		Name:     NameGenerator(),
@@ -63,5 +66,14 @@ func newPlayer() *Player {
 		Cooldown: rand.Intn(20),
 		Money:    0,
 	}
-	return player
+	return *player
+}
+
+// StateToJSON marshals the State struct to JSON
+func (s *State) StateToJSON() []byte {
+	json, err := json.Marshal(s)
+	if err != nil {
+		log.Fatal("Error in marshalling json:", err)
+	}
+	return json
 }
